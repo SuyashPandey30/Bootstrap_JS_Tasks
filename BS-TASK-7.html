@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Train</title>
+    <style>
+        h1,
+        div {
+            text-align: center;
+        }
+
+        h1 {
+            color: #02226d;
+        }
+
+        img {
+            padding-top: 100px;
+            animation: moveTrain 5s linear infinite;
+            animation-play-state: paused;
+        }
+
+        @keyframes moveTrain {
+            0% {
+                padding-left: 0%;
+            }
+
+            100% {
+                padding-left: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img id="train" src="./trainpic.jpeg" alt="Train" height="200px">
+    <div style="width: 100%; height: 5px;"></div>
+    <h1>Click the buttons below to control the animation</h1>
+    <div>
+        <button onclick="startAnimation()">Start</button>
+        <button onclick="stopAnimation()">Stop</button>
+    </div>
+</body>
+<script>
+    function startAnimation() {
+        document.getElementById("train").style.animationPlayState = "running";
+    }
+    function stopAnimation() {
+        document.getElementById("train").style.animationPlayState = "paused";
+    }
+</script>
+
+</html>
