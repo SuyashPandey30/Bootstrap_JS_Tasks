@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <script>
         function Sort(){
-            var x=document.getElementById("inptxt").value;
-            document.getElementById('result').textContent= x.split('').sort().join('');
+            var x = document.getElementById("inptxt").value;
+            var sortedString = x.split('').sort(function(a, b) {
+                return a.localeCompare(b, undefined, { sensitivity: 'base' });
+            }).join('');
+            document.getElementById('result').textContent = sortedString;
         }
         function Reset() {
             document.getElementById("inptxt").value = "";
@@ -28,4 +31,3 @@
 </center>
 </body>
 </html>
-
